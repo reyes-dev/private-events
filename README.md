@@ -1,24 +1,5 @@
-# README
+# Private Events
+This is the [Private Events project](https://www.theodinproject.com/lessons/ruby-on-rails-private-events) of The Odin Project's Ruby on Rails course. It is intended as practice for ActiveRecord associations in Rails. It is also an opportunity to solidify knowledge of authentication via the Devise gem and working with the Model-View-Controller pattern.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Purpose
+Private Events is a simple site which allows users to create/attend events and manage user signups. Events can be attended by many users, and users can attend many events. Events take place at a location at a specific date.
