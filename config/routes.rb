@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'users/sessions' }
   root "events#index"
-  get 'events/index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_scope :user do
+    get 'show', to: 'users/sessions#show'
+  end
+  resources :events, only: [:new, :create, :index]
 end
