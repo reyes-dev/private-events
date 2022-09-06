@@ -1,10 +1,5 @@
 <h1>Private Events</h1>
 
 <% @events.each do |event| %>
-  <p>Name of Event</p>
-  <%= event.name %>
-  <p>Location of Event</p>
-  <%= event.location %>
-  <p>Day of Event</p>
-  <%= event.date %>
+  <%= link_to event.name, event_path(event.id) %>
 <% end %>

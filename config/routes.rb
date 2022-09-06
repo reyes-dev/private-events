@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'show', to: 'users/sessions#show'
   end
-  resources :events, only: [:new, :create, :index]
+  resources :events, only: [:new, :create, :index, :show]
 end
