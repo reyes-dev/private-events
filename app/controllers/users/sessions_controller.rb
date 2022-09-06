@@ -19,8 +19,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def show
-    @user = User.find(params[:user_id])
-    @events = @user.events
+    @events = current_user.events
   end
 
   # protected
