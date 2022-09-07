@@ -19,7 +19,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def show
-    @events = current_user.events
+    @events = current_user.created_events
   end
 
   # protected

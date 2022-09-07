@@ -5,4 +5,7 @@ Rails.application.routes.draw do
     get 'show', to: 'users/sessions#show'
   end
   resources :events, only: [:new, :create, :index, :show]
+  resources :events do
+    post 'attend', on: :member
+  end
 end

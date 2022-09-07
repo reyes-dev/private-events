@@ -6,3 +6,11 @@
   <%= @event.location %>
   <p>Day of Event</p>
   <%= @event.date %>
+  <p>Attendees:</p>
+  <%=  %>
+
+  <% if @event.attendees.include?(current_user) %>
+    <%= button_to 'Unattend' %>
+  <% else %>
+    <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
+  <% end %>
