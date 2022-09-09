@@ -2,7 +2,9 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @events = Event.all
+    # @events = Event.all
+    @past_events = Event.past
+    @future_events = Event.future
   end
 
   def new
