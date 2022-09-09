@@ -1,5 +1,10 @@
-<% @events.each do |event| %>
+<h2>Created Events</h2>
+<% @created_events.each do |event| %>
   <%= event.name %>
   <%= event.location %>
   <%= event.date %>
+<% end %>
+<h2>Attended Events</h2>
+<% @attended_events.each do |event| %>
+  <%= event.name %> <br />
 <% end %>
