@@ -3,8 +3,18 @@
   <%= event.name %>
   <%= event.location %>
   <%= event.date %>
+  <br />
 <% end %>
 <h2>Attended Events</h2>
+<h3>Future Events</h3>
 <% @attended_events.each do |event| %>
-  <%= event.name %> <br />
+  <% if event.date > Time.now %>
+    <%= event.date %><br />
+  <% end %>
+<% end %>
+<h3>Past Events</h3>
+<% @attended_events.each do |event| %>
+  <% if event.date < Time.now %>
+    <%= event.date %><br />
+  <% end %>
 <% end %>
