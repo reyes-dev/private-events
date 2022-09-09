@@ -12,8 +12,8 @@
 
   <body>    
   <div class="header">
+  <%= link_to 'Home', root_path %>
     <% if current_user %>
-      <%= link_to 'Edit Account', edit_user_registration_path %>
       <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
       <%= link_to 'New Event', new_event_path(@event) %>
       <%= link_to 'My Events', show_path %>
