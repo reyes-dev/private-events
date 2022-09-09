@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :events, only: [:new, :create, :index, :show]
   resources :events do
     post 'attend', on: :member
+    post 'stop_attend', on: :member
   end
 end

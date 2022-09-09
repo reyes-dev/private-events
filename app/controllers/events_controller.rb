@@ -30,6 +30,12 @@ class EventsController < ApplicationController
     redirect_to attend_event_path
   end
 
+  def stop_attend
+    @event = Event.find(params[:id])
+    @event.attendees.destroy current_user.id
+    redirect_to attend_event_path
+  end
+
   private
 
   def event_params
