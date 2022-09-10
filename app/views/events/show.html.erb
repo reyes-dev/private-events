@@ -17,6 +17,6 @@
     <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
   <% end %>
   <br />
-  <% if current_user.id == @event.creator_id %>
+  <% if user_signed_in? && current_user.id == @event.creator_id %>
     <%= button_to 'Delete', @event, method: :delete %>
   <% end %>
