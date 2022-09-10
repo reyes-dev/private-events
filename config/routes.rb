@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'show', to: 'users/sessions#show'
   end
-  resources :events, only: [:new, :create, :index, :show]
+  resources :events, only: [:destroy, :new, :create, :index, :show]
+
   resources :events do
     post 'attend', on: :member
     post 'stop_attend', on: :member
