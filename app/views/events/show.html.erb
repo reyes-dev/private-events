@@ -20,3 +20,7 @@
   <% if user_signed_in? && current_user.id == @event.creator_id %>
     <%= button_to 'Delete', @event, method: :delete %>
   <% end %>
+  <br />
+  <% if user_signed_in? && current_user.id == @event.creator_id %>
+    <%= link_to 'Edit', edit_event_path(@event) %>
+  <% end %>
