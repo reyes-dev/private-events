@@ -56,6 +56,14 @@ class EventsController < ApplicationController
     @event.attendees.destroy current_user.id
     redirect_to attend_event_path
   end
+  
+  def future_events
+    @future_events = Event.future
+  end
+
+  def past_events
+    @past_events = Event.past
+  end
 
   private
 

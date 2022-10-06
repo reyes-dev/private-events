@@ -1,11 +1,9 @@
-<h1>Private Events</h1>
+<p class="para_events">Events</p>
 
-<h2>Future Events</h2>
 <% @future_events.each do |event| %>
   <%= link_to event.name, event_path(event.id) %>
 <% end %>
 
-<h2>Past Events</h2>
 <% @past_events.each do |event| %>
   <%= link_to event.name, event_path(event.id) %>
 <% end %>

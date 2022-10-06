@@ -1,0 +1,5 @@
+<p class="para_events">Past Events</p>
+
+<% @past_events.each do |event| %>
+  <%= link_to event.name, event_path(event.id) %>
+<% end %>

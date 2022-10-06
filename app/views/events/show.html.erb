@@ -1,10 +1,7 @@
-<h1>Events</h1>
-
-  <p>Name of Event</p>
-  <%= @event.name %>
-  <p>Location of Event</p>
+  <h2><%= @event.name + ' Event' %></h2>
+  <p>Location:</p>
   <%= @event.location %>
-  <p>Day of Event</p>
+  <p>Date:</p>
   <%= @event.date %>
   <p>Attendees:</p>
   <% @event.attendees.each do |attendee| %>

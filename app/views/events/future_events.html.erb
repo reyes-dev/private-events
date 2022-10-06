@@ -1,0 +1,5 @@
+<p class="para_events">Future Events</p>
+
+<% @future_events.each do |event| %>
+  <%= link_to event.name, event_path(event.id) %>
+<% end %>

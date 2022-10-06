@@ -7,24 +7,76 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'styles' %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>    
-  <div class="header">
-  <%= link_to 'Home', root_path %>
-    <% if current_user %>
-      <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
-      <%= link_to 'New Event', new_event_path(@event) %>
-      <%= link_to 'My Events', show_path %>
-    <% else %>
-      <%= link_to_unless_current "Log in", new_user_session_path %>
-      <%= link_to_unless_current "Register", new_user_registration_path %>
-    <% end %>
-  </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body>
+    <div class="container">
+      <div class="home">
+        <%= link_to root_path do %>
+          <%= image_tag 'PE_logo' %>
+        <% end %>
+      </div>
+      <% if current_user %>
+        <%= link_to past_events_events_path, class: 'past_events' do %>
+          <div class="past_events">
+            <p>Past Events</p>
+          </div>
+        <% end %>
 
-    <%= yield %>
+        <%= link_to future_events_events_path, class: 'future_events' do %>
+          <div class="future_events">
+            <p>Future Events</p>
+          </div>
+        <% end %>
+
+        <%= link_to new_event_path(@event), class: 'new_event' do %>
+          <div class="new_event">
+            <p>New Event</p>
+          </div>
+        <% end %>
+
+        <div class="user_profile">
+          <%= link_to 'My Events', show_path %>  
+          <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>        
+        </div>
+      <% else %>
+        <%= link_to past_events_events_path, class: 'past_events' do %>
+          <div class="past_events">
+            <p>Past Events</p>
+          </div>
+        <% end %>
+
+        <%= link_to future_events_events_path, class: 'future_events' do %>
+          <div class="future_events">
+            <p>Future Events</p>
+          </div>
+        <% end %>
+
+        <div class="new_event">
+          <p>?</p>
+        </div>
+        <div class="user_profile">
+          <%= link_to "Register", new_user_registration_path %>    
+          <p class="user_profile_header">Make Private Events</p>
+          <ul>
+            <li>View Past or Future Events</li>
+            <li>Read event details</li>
+            <li>Sign up with us to create your own!</li>
+          </ul>
+          <%= link_to "Log in", new_user_session_path %>
+        </div>
+      <% end %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <div class="events_display">
+        <%= yield %>
+      </div>
+      <div class="footer">
+        <h2>Created by <%= link_to "reyesdev", "https://github.com/reyes-dev", :target => "_blank", class: 'github_link' %></h2>
+      </div>
+    </div>
   </body>
 </html>
